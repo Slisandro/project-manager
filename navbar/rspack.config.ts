@@ -30,7 +30,9 @@ export default defineConfig({
     // You need to set a unique value that is not equal to other applications
     uniqueName: "navbar",
     // publicPath must be configured if using manifest
-    publicPath: "http://localhost:3001/",
+    publicPath: isDev
+      ? "http://localhost:3001/"
+      : process.env.NEXT_PUBLIC_NAVBAR_URL + "/",
   },
 
   experiments: {
