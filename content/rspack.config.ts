@@ -8,7 +8,7 @@ import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 import { mfConfig } from "./module-federation.config";
 
 const isDev = process.env.NODE_ENV === "development";
-
+console.log({ isDev })
 // Target browsers, see: https://github.com/browserslist/browserslist
 const targets = ["chrome >= 87", "edge >= 88", "firefox >= 78", "safari >= 14"];
 
@@ -22,15 +22,22 @@ export default defineConfig({
   },
 
   devServer: {
-    port: 3002,
-    historyApiFallback: true,
-    watchFiles: [path.resolve(__dirname, "src")],
+      port: 3002,
+      historyApiFallback: true,
+      watchFiles: [path.resolve(__dirname, "src")],
+      allowedHosts: "all",  // Permite cualquier host
+      host: "0.0.0.0",  // Escucha en todas las interfaces de red
+      headers: {
+        "Access-Control-Allow-Origin": "*",  // Evita problemas de CORS
+      },
   },
   output: {
     // You need to set a unique value that is not equal to other applications
     uniqueName: "content",
     // publicPath must be configured if using manifest
-    publicPath: "http://localhost:3002/",
+    publicPath: isDev
+      ? "http://localhost:3002/"
+      : process.env.NEXT_PUBLIC_NAVBAR_URL + "/",
   },
 
   experiments: {
