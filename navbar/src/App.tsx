@@ -4,7 +4,6 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import "./index.css";
 
-
 const BoardCard = ({ board }: { board: { name: string, description: string, id: number } }) => (
   <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition m-2 w-60">
     <h2 className="font-bold text-lg">{board.name}</h2>
