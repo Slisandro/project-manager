@@ -22,9 +22,14 @@ export default defineConfig({
   },
 
   devServer: {
-    port: 3001,
-    historyApiFallback: true,
-    watchFiles: [path.resolve(__dirname, "src")],
+      port: 3001,
+      historyApiFallback: true,
+      watchFiles: [path.resolve(__dirname, "src")],
+      allowedHosts: "all",  // Permite cualquier host
+      host: "0.0.0.0",  // Escucha en todas las interfaces de red
+      headers: {
+        "Access-Control-Allow-Origin": "*",  // Evita problemas de CORS
+      },
   },
   output: {
     // You need to set a unique value that is not equal to other applications
