@@ -5,7 +5,7 @@
     "module": "ESNext",
     "jsx": "react-jsx",
     "strict": true,
-    "noEmit": true,
+    "noEmit": false,  // 🔥 Permite generar archivos de tipos
     "skipLibCheck": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
@@ -13,10 +13,12 @@
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
     "paths": {
-      "*": ["./@mf-types/*"]
-    }
+      "@mf-types/*": ["./node_modules/.federation/@mf-types/*"]
+    },
+    "outDir": "dist/types"  // 🔥 Asegura que los tipos tengan salida
   },
-  "include": ["src"],
+  "include": ["src", "node_modules/.federation"],  // 🔥 Incluye los tipos federados
+  "exclude": ["node_modules", "dist"],  // 🔥 Excluye archivos innecesarios
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

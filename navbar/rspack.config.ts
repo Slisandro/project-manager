@@ -4,7 +4,6 @@ import { rspack } from "@rspack/core";
 import * as RefreshPlugin from "@rspack/plugin-react-refresh";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 
-
 import { mfConfig } from "./module-federation.config";
 
 const isDev = process.env.NODE_ENV === "development";
@@ -22,14 +21,14 @@ export default defineConfig({
   },
 
   devServer: {
-      port: 3001,
-      historyApiFallback: true,
-      watchFiles: [path.resolve(__dirname, "src")],
-      allowedHosts: "all",  // Permite cualquier host
-      host: "0.0.0.0",  // Escucha en todas las interfaces de red
-      headers: {
-        "Access-Control-Allow-Origin": "*",  // Evita problemas de CORS
-      },
+    port: 3001,
+    historyApiFallback: true,
+    watchFiles: [path.resolve(__dirname, "src")],
+    allowedHosts: "all", // Permite cualquier host
+    host: "0.0.0.0", // Escucha en todas las interfaces de red
+    headers: {
+      "Access-Control-Allow-Origin": "*", // Evita problemas de CORS
+    },
   },
   output: {
     // You need to set a unique value that is not equal to other applications
