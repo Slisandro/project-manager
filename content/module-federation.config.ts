@@ -1,7 +1,8 @@
 export const mfConfig = {
   name: "content",
   exposes: {
-    "./Styles": "./src/index.css"
+    "./BoardScreen": "./src/screens/BoardScreen.tsx",
+    "./Styles": "./src/index.css",
   },
   shared: ["react", "react-dom", "tailwindcss", "react-router-dom"],
 };
