@@ -4,10 +4,13 @@
     "lib": ["DOM", "ES2020"],
     "module": "ESNext",
     "jsx": "react-jsx",
+    "declaration": true,
+    "declarationMap": true,
     "strict": true,
     "noEmit": false,  // 🔥 Permite generar archivos de tipos
     "skipLibCheck": true,
     "isolatedModules": true,
+    "emitDeclarationOnly": false,
     "resolveJsonModule": true,
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,

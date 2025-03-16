@@ -5,4 +5,5 @@ export const mfConfig = {
     "./Styles": "./src/index.css",
   },
   shared: ["react", "react-dom", "tailwindcss", "react-router-dom"],
+  skipTypeGeneration: true, 
 };

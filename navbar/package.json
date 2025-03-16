@@ -2,6 +2,7 @@
   "name": "navbar",
   "version": "0.0.1",
   "scripts": {
+    "prebuild": "tsc --emitDeclarationOnly",
     "build": "cross-env NODE_ENV=production rspack build",
     "build:dev": "cross-env NODE_ENV=development rspack build",
     "build:start": "cd dist && rspack serve",
