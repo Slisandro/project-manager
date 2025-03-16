@@ -1,10 +1,10 @@
 import React from "react";
-import ListBoards from "../components/ListBoards";
 import ButtonCreate from "../components/ButtonCreate";
+import ListBoards from "../components/ListBoards";
 
 function BoardsScreen() {
   return (
-    <div className="relative text-3xl mx-auto h-full w-full bg-[#1F2937] flex flex-col">
+    <div className="relative ml-64 text-3xl mx-auto h-screen w-full bg-[#10110d] flex flex-col pl-6">
       <main className="flex-1">
         <ListBoards />
       </main>
