@@ -34,7 +34,9 @@ export default defineConfig({
     // You need to set a unique value that is not equal to other applications
     uniqueName: "container",
     // publicPath must be configured if using manifest
-    publicPath: "http://localhost:4000/",
+    publicPath: isDev
+      ? "http://localhost:4000/"
+      : process.env.NEXT_PUBLIC_NAVBAR_URL + "/",
   },
 
   experiments: {
