@@ -14,9 +14,11 @@ function Board() {
   if (loading) return "Loading...";
 
   return (
-    <DndContext>
-      <BoardComponent />
-    </DndContext>
+    <section className="relative h-screen flex-1 bg-[#10110d] ml-64">
+      <DndContext>
+        <BoardComponent />
+      </DndContext>
+    </section>
   );
 }
 

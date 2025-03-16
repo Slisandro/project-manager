@@ -124,23 +124,26 @@ export default function App() {
   };
 
   return (
-    <div className="flex gap-4 min-h-screen p-8">
-      <DndContext
-        sensors={sensors}
-        collisionDetection={closestCorners}
-        onDragStart={handleDragStart}
-        onDragOver={handleDragOver}
-        onDragEnd={handleDragEnd}
-      >
-        {items.flatMap((board) =>
-          board.tables.map((table) => (
-            <Droppable key={table.id} {...table} addTask={addTask} />
-          ))
-        )}
-        <DragOverlay>
-          {activeTask ? <Card {...activeTask} /> : null}
-        </DragOverlay>
-      </DndContext>
+    <div className="h-[90%] max-h-screen">
+      <h3 className="text-white w-full my-2 mx-4">{items[0].title}</h3>
+      <div className="flex gap-4 h-full px-4">
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCorners}
+          onDragStart={handleDragStart}
+          onDragOver={handleDragOver}
+          onDragEnd={handleDragEnd}
+        >
+          {items.flatMap((board) =>
+            board.tables.map((table) => (
+              <Droppable key={table.id} {...table} addTask={addTask} />
+            ))
+          )}
+          <DragOverlay>
+            {activeTask ? <Card {...activeTask} /> : null}
+          </DragOverlay>
+        </DndContext>
+      </div>
     </div>
   );
 }

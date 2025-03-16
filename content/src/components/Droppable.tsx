@@ -32,7 +32,7 @@ export default function Droppable({
       <div
         ref={setNodeRef}
         style={{ backgroundColor: color, borderColor: borderColor }}
-        className={"relative rounded-md p-4 border-1 w-50 gap-2 flex flex-col"}
+        className="relative rounded-md p-4 border-1 w-50 gap-2 flex flex-col"
       >
         <h2 className="text-[#dfdbe5] text-sm">{title}</h2>
         {tasks.map((task) => (

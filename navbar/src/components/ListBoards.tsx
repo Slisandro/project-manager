@@ -17,7 +17,7 @@ export default function ListBoards() {
             key={board.id}
             className="pl-6 pr-4 py-2 hover:bg-gray-800 cursor-pointer"
           >
-            <Link to={"/boards/" + board.id} content={board.name} />
+            <Link to={"/b/" + board.id} content={board.name} />
           </li>
         ))
       ) : (
