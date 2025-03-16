@@ -8,6 +8,8 @@ import { mfConfig } from "./module-federation.config";
 
 const isDev = process.env.NODE_ENV === "development";
 
+console.log({isDev})
+
 // Target browsers, see: https://github.com/browserslist/browserslist
 const targets = ["chrome >= 87", "edge >= 88", "firefox >= 78", "safari >= 14"];
 
@@ -21,9 +23,7 @@ export default defineConfig({
   },
 
   devServer: {
-    port: isDev
-      ? "http://localhost:3001/"
-      : process.env.NEXT_PUBLIC_NAVBAR_URL + "/",
+    port: 3001,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
     allowedHosts: "all", // Permite cualquier host

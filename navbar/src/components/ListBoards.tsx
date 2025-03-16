@@ -11,7 +11,7 @@ export default function ListBoards() {
       <li className="p-4 text-gray-400 uppercase text-sm cursor-default">
         📋 &nbsp; Tableros
       </li>
-      {boards.length ? (
+      {true ? (
         boards.map((board) => (
           <li
             key={board.id}
