@@ -1,11 +1,12 @@
 import Link from "./Link";
 
-const boards: { id: number; name: string; description: string }[] | [] = [
-  { id: 1, name: "Proyecto A", description: "Planificación inicial" },
-  { id: 2, name: "Proyecto B", description: "Marketing y diseño" },
-];
 
 export default function ListBoards() {
+  const boards: { id: number; name: string; description: string }[] | [] = [
+    { id: 1, name: "Proyecto A", description: "Planificación inicial" },
+    { id: 2, name: "Proyecto B", description: "Marketing y diseño" },
+  ];
+  
   return (
     <>
       <li className="p-4 text-gray-400 uppercase text-sm cursor-default">
