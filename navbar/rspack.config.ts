@@ -21,7 +21,9 @@ export default defineConfig({
   },
 
   devServer: {
-    port: 3001,
+    port: isDev
+      ? "http://localhost:3001/"
+      : process.env.NEXT_PUBLIC_NAVBAR_URL + "/",
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
     allowedHosts: "all", // Permite cualquier host
