@@ -21,7 +21,7 @@ export default defineConfig({
   },
 
   devServer: {
-    port: 3001,
+    port: 4000,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
     allowedHosts: "all", // Permite cualquier host
@@ -32,11 +32,9 @@ export default defineConfig({
   },
   output: {
     // You need to set a unique value that is not equal to other applications
-    uniqueName: "navbar",
+    uniqueName: "container",
     // publicPath must be configured if using manifest
-    publicPath: isDev
-      ? "http://localhost:3001/"
-      : process.env.NEXT_PUBLIC_NAVBAR_URL + "/",
+    publicPath: "http://localhost:4000/",
   },
 
   experiments: {
