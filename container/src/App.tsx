@@ -19,7 +19,7 @@ const App = () => (
     <Router>
       <Navbar />
       <Routes>
-        <Route Component={Boards} path="/home" />
+        <Route Component={Boards} path="/" />
         <Route Component={Board} path="/b/:id" />
         <Route Component={NotFound} path="*" />
       </Routes>
